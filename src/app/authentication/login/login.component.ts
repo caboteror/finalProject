@@ -1,15 +1,28 @@
+import { AuthenticationService } from './../../core/services/authentication.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+	selector: 'app-login',
+	templateUrl: './login.component.html',
+	styleUrls: [ './login.component.scss' ]
 })
 export class LoginComponent implements OnInit {
+	loginForm: FormGroup;
 
-  constructor() { }
+	constructor(private fb: FormBuilder, private authenticationService: AuthenticationService) {
+		// use FormBuilder to create a form group
+		this.loginForm = this.fb.group({
+			username: [ '', Validators.required ],
+			password: [ '', Validators.required ]
+		});
+	}
 
-  ngOnInit() {
-  }
-
+	validateAuthentication() {
+		return this.authenticationService.validateUserAndPassword(
+			this.loginForm.get('username').value,
+			this.loginForm.get('password').value
+		);
+	}
+	ngOnInit() {}
 }
