@@ -5,11 +5,15 @@ const routes: Routes = [
 	{
 		path: '',
 		loadChildren: './authentication/authentication.module#AuthenticationModule'
+	},
+	{
+		path: 'home',
+		loadChildren: './home/home.module#HomeModule'
 	}
 ];
 
 @NgModule({
-	imports: [ RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }) ],
+	imports: [ RouterModule.forRoot(routes) ],
 	exports: [ RouterModule ],
 	declarations: []
 })
