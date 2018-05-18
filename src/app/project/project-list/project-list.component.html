@@ -1,0 +1,7 @@
+<h1>Users</h1>
+<div *ngIf="projects$ | async as projects">
+    <div *ngFor="let project of projects">
+      {{project.id}} - {{project.name}}
+       
+    </div>
+  </div>

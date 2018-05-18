@@ -1,15 +1,13 @@
+import { DataUserService } from './../../core/services/data-user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: [ './home.component.scss' ]
 })
 export class HomeComponent implements OnInit {
+	constructor(private dataUserService: DataUserService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	ngOnInit() {}
 }

@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	validateAuthentication() {
-		return this.authenticationService.validateUserAndPassword(
+		this.authenticationService.validateAuthentication(
 			this.loginForm.get('username').value,
 			this.loginForm.get('password').value
 		);

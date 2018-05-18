@@ -1,3 +1,11 @@
 <p>
-  home works!
+  Hola {{dataUserService.user.name}}
 </p>
+<br>
+
+<a *ngIf="!dataUserService.user.roll" [routerLink]="['users']">Users</a> - 
+
+<a *ngIf="!dataUserService.user.roll" [routerLink]="['projects']">Projecs</a> - 
+
+<a [routerLink]="['home']">my Projec</a>
+

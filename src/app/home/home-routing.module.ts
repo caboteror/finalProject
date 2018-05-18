@@ -8,6 +8,14 @@ const routes: Routes = [
 		path: '',
 		component: HomeComponent,
 		canActivate: [ LoginGuard ]
+	},
+	{
+		path: 'users',
+		loadChildren: '../user/user.module#UserModule'
+	},
+	{
+		path: 'projects',
+		loadChildren: '../project/project.module#ProjectModule'
 	}
 ];
 
