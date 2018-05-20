@@ -1,3 +1,22 @@
-<p>
-  project-detail works!
-</p>
+
+<form [formGroup]="projectForm" (ngSubmit)="createProject()">
+    <input
+      formControlName="name"
+      placeholder="name"
+      type="text" /><br>
+    <label>teamSize</label><br>
+    <input
+      formControlName="teamSize"
+      placeholder="teamSize"
+      type="number" /><br>
+    <label>clientName</label><br>
+    <input
+      formControlName="clientName"
+      placeholder="clientName"
+      type="clientName" /><br>
+  <button [disabled]="!projectForm.valid" type="submit">create
+  </button>
+</form>
+
+<router-outlet></router-outlet>
+

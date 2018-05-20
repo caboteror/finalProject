@@ -1,4 +1,4 @@
-import { DataUserService } from './data-user.service';
+import { DataEmployeeService } from './data-employee.service';
 import { AuthenticationService } from './authentication.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
@@ -7,10 +7,10 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angul
 export class LoginGuard implements CanActivate {
 	constructor(
 		private authenticationService: AuthenticationService,
-		private dataUserService: DataUserService
+		private dataEmployeeService: DataEmployeeService
 	) {}
 
 	canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-		return this.dataUserService.isLogged;
+		return this.dataEmployeeService.isLogged;
 	}
 }

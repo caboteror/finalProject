@@ -1,12 +1,12 @@
-import { User } from './../models/user.interface';
+import { Employee } from './../models/employee.interface';
 import { Injectable } from '@angular/core';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class DataUserService {
+export class DataEmployeeService {
 	isLogged = false;
-	user: User;
+	employee: Employee;
 	error = { code: 1, messaje: 'Usuario o clave invalido' };
 	constructor() {}
 
@@ -15,8 +15,8 @@ export class DataUserService {
 		this.isLogged = isLogged;
 	}
 
-	setUserLogged(user: User) {
-		this.user = user;
+	setEmployeeLogged(employee: Employee) {
+		this.employee = employee;
 		this.setIsLogged(true);
 	}
 }

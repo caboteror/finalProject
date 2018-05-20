@@ -1,5 +1,5 @@
-import { User } from './../models/user.interface';
-import { DataUserService } from './data-user.service';
+import { DataEmployeeService } from './data-employee.service';
+import { Employee } from './../models/employee.interface';
 import { environment } from './../../../environments/environment';
 import { ApiService } from './api.service';
 import { Injectable } from '@angular/core';
@@ -11,39 +11,39 @@ import { Route } from '@angular/router';
 	providedIn: 'root'
 })
 export class AuthenticationService {
-	user: User;
+	employee: Employee;
 	error;
 	data$;
-	isUserLogged = false;
+	isEmployeeLogged = false;
 
-	constructor(private apiService: ApiService, private dataUserService: DataUserService) {}
+	constructor(private apiService: ApiService, private dataEmployeeService: DataEmployeeService) {}
 
-	validateAuthentication(user: string, password: string) {
+	validateAuthentication(username: string, password: string) {
 		const cachedData = null;
 		this.data$ = this.apiService
-			.get('users')
+			.get('employees')
 			.pipe(
-				map((collection: User[]) => {
+				map((collection: Employee[]) => {
 					return collection.filter(
-						(data) => data.user === user && data.password === password
+						(data) => data.username === username && data.password === password
 					);
 				})
 			)
 			.subscribe(
 				(data) => {
 					data.length
-						? this.dataUserService.setUserLogged(data[0])
-						: this.dataUserService.setIsLogged(false);
+						? this.dataEmployeeService.setEmployeeLogged(data[0])
+						: this.dataEmployeeService.setIsLogged(false);
 				},
 				(err) => {
 					this.error = `${environment.comunitacionError}`;
 				}
 			);
-		return this.isUserLogged;
+		return this.isEmployeeLogged;
 	}
 
 	isLogged() {
-		console.log(this.isUserLogged);
-		return this.isUserLogged;
+		console.log(this.isEmployeeLogged);
+		return this.isEmployeeLogged;
 	}
 }

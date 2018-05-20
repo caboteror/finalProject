@@ -1,7 +1,5 @@
 <h1>Projects</h1>
 <div *ngIf="projects$ | async as projects">
-    <div *ngFor="let project of projects">
-      {{project.id}} - {{project.name}}
-       
-    </div>
-  </div>
+  <my-table [displayedColumns]="displayedColumns" [data]="projects"></my-table>
+</div>
+

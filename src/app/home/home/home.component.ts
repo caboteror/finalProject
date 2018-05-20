@@ -1,4 +1,4 @@
-import { DataUserService } from './../../core/services/data-user.service';
+import { DataEmployeeService } from './../../core/services/data-employee.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './home.component.scss' ]
 })
 export class HomeComponent implements OnInit {
-	constructor(private dataUserService: DataUserService) {}
+	constructor(private dataEmployeeService: DataEmployeeService) {}
 
 	ngOnInit() {}
 }

@@ -12,4 +12,8 @@ export class ProjectService {
 	getProjects(): Observable<Project[]> {
 		return this.apiService.get('projects');
 	}
+
+	updateProject(project: Project): void {
+		this.apiService.post('projects', project).subscribe(console.log);
+	}
 }

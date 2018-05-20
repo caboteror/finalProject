@@ -1,3 +1,4 @@
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProjectListComponent } from './project-list/project-list.component';
@@ -5,15 +6,20 @@ import { ProjectListComponent } from './project-list/project-list.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: ProjectListComponent,
+		component: ProjectDetailComponent,
 		// canActivate: [ LoginGuard ]
 		children: [
 			{
-				path: 'projectDetail',
+				path: '',
 				component: ProjectListComponent
 				// canActivate: [ LoginGuard ]
 			}
 		]
+	},
+	{
+		path: 'projectDetail',
+		component: ProjectDetailComponent
+		// canActivate: [ LoginGuard ]
 	}
 ];
 

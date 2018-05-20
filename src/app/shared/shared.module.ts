@@ -10,8 +10,13 @@ import {
 	MatSidenavModule,
 	MatIconModule,
 	MatListModule,
-	MatFormField
+	MatFormField,
+	MatTableModule,
+	MatPaginatorModule,
+	MatSortModule,
+	MatInputModule
 } from '@angular/material';
+import { MyTableComponent } from './material/my-table/my-table.component';
 
 @NgModule({
 	imports: [
@@ -24,9 +29,21 @@ import {
 		MatButtonModule,
 		MatSidenavModule,
 		MatIconModule,
-		MatListModule
+		MatListModule,
+		MatTableModule,
+		MatPaginatorModule,
+		MatSortModule,
+		MatInputModule
 	],
-	declarations: [ MyNavComponent ],
-	exports: [ CommonModule, FormsModule, ReactiveFormsModule, RouterModule, MyNavComponent ]
+	declarations: [ MyNavComponent, MyTableComponent ],
+	exports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		RouterModule,
+		MyNavComponent,
+		MatInputModule,
+		MyTableComponent
+	]
 })
 export class SharedModule {}

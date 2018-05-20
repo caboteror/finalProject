@@ -1,18 +1,18 @@
-import { UsersListComponent } from './users-list/users-list.component';
+import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { LoginGuard } from './../core/services/login-guard.service';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: UsersListComponent,
+		component: EmployeesListComponent,
 		// canActivate: [ LoginGuard ]
 		children: [
 			{
-				path: 'userDetail',
-				component: UserDetailComponent
+				path: 'employeeDetail',
+				component: EmployeeDetailComponent
 				// canActivate: [ LoginGuard ]
 			}
 		]
@@ -23,4 +23,4 @@ const routes: Routes = [
 	imports: [ RouterModule.forChild(routes) ],
 	exports: [ RouterModule ]
 })
-export class UserRoutingModule {}
+export class EmployeeRoutingModule {}
