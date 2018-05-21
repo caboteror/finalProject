@@ -10,4 +10,8 @@ export class HomeComponent implements OnInit {
 	constructor(private dataEmployeeService: DataEmployeeService) {}
 
 	ngOnInit() {}
+
+	logOut() {
+		this.dataEmployeeService.logOut();
+	}
 }

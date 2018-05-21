@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 
@@ -8,6 +8,11 @@ import { Observable } from 'rxjs';
 	styleUrls: [ './my-nav.component.css' ]
 })
 export class MyNavComponent {
+	@Output() logOut = new EventEmitter();
 	isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
 	constructor(private breakpointObserver: BreakpointObserver) {}
+
+	onLogOut() {
+		this.logOut.emit();
+	}
 }

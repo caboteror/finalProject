@@ -10,6 +10,7 @@
     <mat-nav-list>
       <a [routerLink]="['employees']" mat-list-item href="#">Employees</a>
       <a [routerLink]="['projects']" mat-list-item href="#">Projects</a>
+      <a (click)="onLogOut()" mat-list-item href="#">logOut</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
