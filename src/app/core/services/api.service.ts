@@ -22,7 +22,14 @@ export class ApiService {
 		return this.http.post(`${environment.api_url}${path}`, body);
 	}
 
-	delete(path): Observable<any> {
-		return this.http.delete(`${environment.api_url}${path}`);
+	delete(path, body) {
+		const options = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		};
+		return this.http
+			.delete(`${environment.api_url}${path}/${body.id}`, options)
+			.pipe(map((_) => _ as any));
 	}
 }

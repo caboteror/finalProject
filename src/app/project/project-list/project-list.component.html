@@ -1,5 +1,12 @@
+
+
 <h1>Projects</h1>
+
 <div *ngIf="projects$ | async as projects">
-  <my-table [displayedColumns]="displayedColumns" [data]="projects"></my-table>
+  <my-table [displayedColumns]="displayedColumns" [data]="projects" (addItem)="openDialog()" (editItem)="editItem($event)" (deleteItem)="deleteProject($event)" ></my-table>
 </div>
 
+
+
+    
+  

@@ -12,4 +12,12 @@ export class EmployeesService {
 	getEmployees(): Observable<Employee[]> {
 		return this.apiService.get('employees');
 	}
+
+	updateEmployee(employee: Employee): void {
+		this.apiService.post('employees', employee).subscribe(console.log);
+	}
+
+	deleteEmployee(employee) {
+		this.apiService.delete('employees', employee).subscribe(console.log);
+	}
 }

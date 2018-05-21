@@ -1,3 +1,62 @@
-<p>
-    employee-detail works!
-</p>
+<form [formGroup]="employeeForm" (ngSubmit)="createEmployee()">
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="name"
+        placeholder="name"
+        type="text" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="company"
+        placeholder="company"
+        type="text" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="age"
+        placeholder="age"
+        type="number" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="birthday"
+        placeholder="bith Day"
+        type="date" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="favoriteColor"
+        placeholder="favoriteColor"
+        type="text" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="projectId"
+        placeholder="ProjectId"
+        type="number" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="username"
+        placeholder="Username"
+        type="text" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="password"
+        placeholder="password"
+        type="password" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="roll"
+        placeholder="roll"
+        type="number" />
+    </mat-form-field>
+    <button mat-raised-button [disabled]="!employeeForm.valid" type="submit">create
+    </button>
+</form>
+          
+    
+    
+          

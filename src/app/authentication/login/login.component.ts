@@ -24,5 +24,10 @@ export class LoginComponent implements OnInit {
 			this.loginForm.get('password').value
 		);
 	}
+
+	logOut() {
+		this.authenticationService.logOut();
+	}
+
 	ngOnInit() {}
 }

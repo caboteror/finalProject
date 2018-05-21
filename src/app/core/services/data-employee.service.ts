@@ -19,4 +19,9 @@ export class DataEmployeeService {
 		this.employee = employee;
 		this.setIsLogged(true);
 	}
+
+	logOut() {
+		this.isLogged = false;
+		this.employee = undefined;
+	}
 }

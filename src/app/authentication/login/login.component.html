@@ -1,16 +1,18 @@
 <div class="app-content">
   <div class="group">
 
-    <form [formGroup]="loginForm" (ngSubmit)="validateAuthentication()" class="example-form">
+    <form [formGroup]="loginForm" class="example-form">
       <mat-form-field class="example-full-width">
-        <input matInput formControlName="username" placeholder="Username">
+        <input matInput formControlName="username" (change)="validateAuthentication()" placeholder="Username">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-          <input matInput formControlName="password" placeholder="Password">
+          <input matInput formControlName="password" (change)="validateAuthentication()" placeholder="Password">
       </mat-form-field>
-      <button [disabled]="!loginForm.valid" type="submit">login
+      <button [disabled]="!loginForm.valid" [routerLink]="'home'" type="submit">login
         </button>
     </form>
   </div>
 </div>
+
+

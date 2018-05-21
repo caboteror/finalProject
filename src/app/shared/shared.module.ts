@@ -14,9 +14,14 @@ import {
 	MatTableModule,
 	MatPaginatorModule,
 	MatSortModule,
-	MatInputModule
+	MatInputModule,
+	MatCheckboxModule,
+	MatRadioModule,
+	MatCardModule,
+	MatDialogModule
 } from '@angular/material';
 import { MyTableComponent } from './material/my-table/my-table.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
 	imports: [
@@ -33,9 +38,13 @@ import { MyTableComponent } from './material/my-table/my-table.component';
 		MatTableModule,
 		MatPaginatorModule,
 		MatSortModule,
-		MatInputModule
+		MatInputModule,
+		MatCheckboxModule,
+		MatRadioModule,
+		MatCardModule,
+		MatDialogModule
 	],
-	declarations: [ MyNavComponent, MyTableComponent ],
+	declarations: [ MyNavComponent, MyTableComponent, NotFoundComponent ],
 	exports: [
 		CommonModule,
 		FormsModule,
@@ -43,7 +52,9 @@ import { MyTableComponent } from './material/my-table/my-table.component';
 		RouterModule,
 		MyNavComponent,
 		MatInputModule,
-		MyTableComponent
+		MyTableComponent,
+		MatCheckboxModule,
+		MatDialogModule
 	]
 })
 export class SharedModule {}

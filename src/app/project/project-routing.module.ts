@@ -6,19 +6,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: ProjectDetailComponent,
-		// canActivate: [ LoginGuard ]
-		children: [
-			{
-				path: '',
-				component: ProjectListComponent
-				// canActivate: [ LoginGuard ]
-			}
-		]
-	},
-	{
-		path: 'projectDetail',
-		component: ProjectDetailComponent
+		component: ProjectListComponent
 		// canActivate: [ LoginGuard ]
 	}
 ];

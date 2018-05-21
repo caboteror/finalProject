@@ -43,7 +43,11 @@ export class AuthenticationService {
 	}
 
 	isLogged() {
-		console.log(this.isEmployeeLogged);
 		return this.isEmployeeLogged;
+	}
+
+	logOut() {
+		this.isEmployeeLogged = false;
+		this.employee = undefined;
 	}
 }

@@ -1,22 +1,25 @@
 
 <form [formGroup]="projectForm" (ngSubmit)="createProject()">
-    <input
+  <mat-form-field class="example-full-width">
+       
+    <input matInput
       formControlName="name"
       placeholder="name"
-      type="text" /><br>
-    <label>teamSize</label><br>
-    <input
+      type="text" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+    <input matInput
       formControlName="teamSize"
       placeholder="teamSize"
-      type="number" /><br>
-    <label>clientName</label><br>
-    <input
-      formControlName="clientName"
-      placeholder="clientName"
-      type="clientName" /><br>
-  <button [disabled]="!projectForm.valid" type="submit">create
+      type="number" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput
+        formControlName="clientName"
+        placeholder="clientName"
+        type="clientName" />
+    </mat-form-field>
+  <button mat-raised-button [disabled]="!projectForm.valid" type="submit">create
   </button>
 </form>
-
-<router-outlet></router-outlet>
-

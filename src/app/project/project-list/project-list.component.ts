@@ -1,5 +1,8 @@
+import { Employee } from './../../core/models/employee.interface';
 import { ProjectService } from './../../core/services/project.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { ProjectDetailComponent } from '../project-detail/project-detail.component';
 
 @Component({
 	selector: 'app-project-list',
@@ -7,14 +10,35 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: [ './project-list.component.scss' ]
 })
 export class ProjectListComponent implements OnInit {
-	displayedColumns = [ 'id', 'name', 'teamSize', 'clientName' ];
+	displayedColumns = [ 'select', 'id', 'name', 'teamSize', 'clientName', 'controls' ];
 	projects$;
-	constructor(private projectService: ProjectService) {
+	exapndedElement: Employee;
+	constructor(private projectService: ProjectService, public dialog: MatDialog) {
 		this.projects$ = this.projectService.getProjects();
 	}
 
 	updateData() {
 		this.projects$ = this.projectService.getProjects();
+	}
+
+	editItem(project) {
+		this.projectService.updateProject(project);
+	}
+
+	openDialog(): void {
+		const dialogRef = this.dialog.open(ProjectDetailComponent, {
+			width: '250px',
+			data: {}
+		});
+
+		dialogRef.afterClosed().subscribe((result) => {
+			this.updateData();
+		});
+	}
+
+	deleteProject(project) {
+		this.projectService.deleteProject(project);
+		this.updateData();
 	}
 
 	ngOnInit() {}

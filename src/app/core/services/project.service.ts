@@ -16,4 +16,8 @@ export class ProjectService {
 	updateProject(project: Project): void {
 		this.apiService.post('projects', project).subscribe(console.log);
 	}
+
+	deleteProject(project) {
+		this.apiService.delete('projects', project).subscribe(console.log);
+	}
 }

@@ -7,9 +7,13 @@ const routes: Routes = [
 	{
 		path: '',
 		component: HomeComponent,
-		canActivate: [ LoginGuard ],
+		// canActivate: [ LoginGuard ],
 
 		children: [
+			{
+				path: '',
+				loadChildren: '../employee/employee.module#EmployeeModule'
+			},
 			{
 				path: 'employees',
 				loadChildren: '../employee/employee.module#EmployeeModule'

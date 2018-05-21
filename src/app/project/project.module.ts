@@ -8,6 +8,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 
 @NgModule({
 	imports: [ CommonModule, ProjectRoutingModule, SharedModule, CoreModule ],
-	declarations: [ ProjectListComponent, ProjectDetailComponent ]
+	declarations: [ ProjectListComponent, ProjectDetailComponent ],
+	entryComponents: [ ProjectDetailComponent ]
 })
 export class ProjectModule {}
