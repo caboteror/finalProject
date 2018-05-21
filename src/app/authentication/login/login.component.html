@@ -7,12 +7,16 @@
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-          <input matInput formControlName="password" (change)="validateAuthentication()" placeholder="Password">
+          <input matInput formControlName="password" (input)="validateAuthentication()" placeholder="Password">
       </mat-form-field>
       <button [disabled]="!loginForm.valid" [routerLink]="'home'" type="submit">login
         </button>
     </form>
   </div>
+  login: user: a - password: a (es una busqueda en la DB pero no tien ninguna validación)
 </div>
+
+
+login: user: a - password: a (es una busqueda en la DB pero no tien ninguna validación)
 
 

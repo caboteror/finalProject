@@ -38,10 +38,10 @@ export class MyTableComponent implements OnInit {
 	}
 
 	onEditItem(row: any) {
-		if (row.edit) {
+		row.edit = !row.edit;
+		if (!row.edit) {
 			this.editItem.emit(row);
 		}
-		row.edit = !row.edit;
 	}
 
 	onDeleteItem(row) {

@@ -5,11 +5,11 @@
     <ng-container matColumnDef="{{colum}}" *ngFor="let colum of displayedColumns">
       <div *ngIf="colum !== 'select' && colum !== 'controls'">
         <mat-header-cell *matHeaderCellDef mat-sort-header >{{colum}}</mat-header-cell>
-        <mat-cell *matCellDef="let row">
-          <input matInput value="{{row[colum]}}" (change)="edit(row, $event, colum)" [disabled]="!row.edit">
+        <mat-cell [ngStyle]="{'display': colum === 'id' && row.edit ? 'none':'' }" *matCellDef="let row">
+            <input matInput value="{{row[colum]}}" (change)="edit(row, $event, colum)" [disabled]="!row.edit">
         </mat-cell>
       </div>
-      <div *ngIf="colum === 'select'">
+      <div *ngIf="colum === 'select'" ng->
         <mat-header-cell *matHeaderCellDef>
           <mat-checkbox (change)="$event ? masterToggle() : null"
                           [checked]="selection.hasValue() && isAllSelected()"
@@ -23,15 +23,17 @@
             </mat-checkbox>
           </mat-cell>
       </div>
-      <div *ngIf="colum === 'controls'">
-          <mat-header-cell *matHeaderCellDef>
-            controls
+      <div *ngIf="colum === 'controls'" [style.display]="'none'">
+          <mat-header-cell  *matHeaderCellDef>
+            {{colum}}
             </mat-header-cell>
             <mat-cell *matCellDef="let row">
                 <button (click)="onDeleteItem(row)"><mat-icon>delete</mat-icon></button>
                 <button (click)="onEditItem(row)" ><mat-icon *ngIf="!row.edit">edit</mat-icon><mat-icon *ngIf="row.edit">save</mat-icon></button>
             </mat-cell>
         </div>
+        
+
     </ng-container>
     
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
