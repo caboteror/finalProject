@@ -53,10 +53,10 @@ export class DataMockService implements InMemoryDbService {
 			}
 		];
 		const projects = [
-			{ id: 1, name: 'Noel', teamSize: 5, clientName: 'pepa pig' },
-			{ id: 2, name: 'Salvando milagros', teamSize: 5, clientName: 'pepa pig' },
-			{ id: 3, name: 'Jona', teamSize: 5, clientName: 'pepa pig' },
-			{ id: 4, name: 'Las toñas', teamSize: 5, clientName: 'pepa pig' }
+			{ id: 1, name: 'Noel', teamSize: 2, clientName: 'pepa pig' },
+			{ id: 2, name: 'Salvando milagros', teamSize: 1, clientName: 'pepa pig' },
+			{ id: 3, name: 'Jona', teamSize: 1, clientName: 'pepa pig' },
+			{ id: 4, name: 'Las toñas', teamSize: 0, clientName: 'pepa pig' }
 		];
 		return { employees, projects };
 	}

@@ -33,7 +33,7 @@ export class EmployeeDetailComponent implements OnInit {
 	}
 
 	createEmployee() {
-		this.employeesService.updateEmployee(this.employeeForm.value);
+		this.employeesService.createEmployee(this.employeeForm.value);
 		this.close();
 	}
 	onNoClick(): void {

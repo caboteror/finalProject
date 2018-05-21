@@ -20,4 +20,8 @@ export class ProjectService {
 	deleteProject(project) {
 		this.apiService.delete('projects', project).subscribe(console.log);
 	}
+
+	getProjectsById(id) {
+		return this.apiService.get(`projects/${id}`);
+	}
 }
